@@ -89,14 +89,12 @@ const updateTalents = async (req) => {
 const deleteTalents = async (req) => {
   const { id } = req.params;
 
-  const result = await Talents.findOne({
+  const result = await Talents.findByIdAndDelete({
     _id: id,
   });
 
   if (!result)
     throw new NotFoundError(`Tidak ada pembicara dengan id :  ${id}`);
-
-  await result.remove();
 
   return result;
 };

@@ -20,5 +20,6 @@ const checkingImage = async (id) => {
 
   return result;
 };
+
 // jangan lupa export checkingImage
 module.exports = { createImages, checkingImage };
